@@ -1,3 +1,13 @@
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # Implement a class to hold room information. This should have name and
 # description attributes.
 class Room:
@@ -12,7 +22,7 @@ class Room:
         self.x = x
         self.y = y
     def __str__(self):
-        return f"\n-------------------\n\n{self.name}\n\n   {self.description}\n\n{self.get_exits_string()}\n"
+        return f"\n-------------------\n\n{bcolors.OKBLUE}{self.name}\n\n   {self.description}\n\n{self.get_exits_string()}\n"
     def print_room_description(self, player):
         print(str(self))
     def get_exits(self):
